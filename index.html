@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome, New BEMER Distributor — Start Here</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --copper:#b87333; --copper-dark:#9a5d27; --copper-light:#d4956a;
+    --forest:#1e3a2f; --burgundy:#8b4050; --sage:#5d8a7a;
+    --ink:#171310; --stone:#403a33; --stone-light:#5f574c;
+    /* pastel bands */
+    --band-sand:#f4ecd9; --band-cream:#faf6f0; --band-sage:#e6efe9;
+    --band-rose:#f7e9e2; --band-parchment:#efe7da; --band-mist:#e3ede8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',sans-serif;color:var(--ink);line-height:1.75;background:var(--band-cream);
+    -webkit-font-smoothing:antialiased;font-weight:400;font-size:1.22rem;}
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.12;}
+  .big-head{font-size:clamp(2.2rem,5.5vw,3.4rem);color:var(--forest);line-height:1.12;}
+  .big-head em{font-style:italic;color:var(--copper);}
+  .brown-title{font-size:clamp(2rem,4.6vw,3.1rem);line-height:1.18;text-align:center;color:#ffffff;margin:0;}
+  .brown-title em{font-style:italic;color:#f0c9a0;}
+  .brown-sub{font-family:'DM Sans',sans-serif;text-transform:uppercase;letter-spacing:.18em;
+    font-size:.95rem;font-weight:600;color:#ecdccb;text-align:center;margin:1.9rem 0 0;}
+
+  /* bands + reading column */
+  .band{padding:3.4rem 1.4rem;}
+  .band.sand{background:var(--band-sand);}
+  .band.cream{background:var(--band-cream);}
+  .band.sage{background:var(--band-sage);}
+  .band.rose{background:var(--band-rose);}
+  .band.parchment{background:var(--band-parchment);}
+  .band.mist{background:var(--band-mist);}
+  .band.brown{background:linear-gradient(160deg,#6f4a2e,#553823);color:#f4ebe0;}
+  .band.brown h2{color:#fdf6ee;text-align:center;}
+  .band.brown .copybox{margin-top:1.6rem;}
+  .col{max-width:720px;margin:0 auto;}
+
+  .eyebrow{font-family:'DM Sans',sans-serif;font-size:.86rem;letter-spacing:.24em;text-transform:uppercase;
+    font-weight:600;color:var(--copper-dark);margin-bottom:.7rem;}
+  h1{font-size:clamp(2.9rem,7vw,4.4rem);color:var(--forest);margin-bottom:.5rem;}
+  h1 em{font-style:italic;color:var(--copper);font-weight:600;}
+  h2{font-size:clamp(1.9rem,4.5vw,2.5rem);color:var(--forest);margin-bottom:.4rem;}
+  h2 em{font-style:italic;color:var(--copper);}
+  .lead{color:var(--stone);font-size:1.34rem;line-height:1.55;margin-top:.5rem;}
+  p{margin-top:1rem;}
+  p:first-child{margin-top:0;}
+
+  .rule{width:46px;height:2px;background:var(--copper);border-radius:2px;margin:1.4rem 0 .2rem;}
+  .center .rule{margin-left:auto;margin-right:auto;}
+  .center{text-align:center;}
+  .center .rule{margin-top:1.6rem;}
+
+  /* links — plain underlined text, never boxes */
+  a{color:#1558b0;text-decoration:underline;text-decoration-thickness:2px;font-weight:500;
+    text-underline-offset:3px;text-decoration-color:#1558b0;transition:color .15s,text-decoration-color .15s;}
+  a:hover,a:focus-visible{color:#0d3f86;text-decoration-color:#0d3f86;}
+  a:focus-visible{outline:2px solid #1558b0;outline-offset:3px;border-radius:3px;}
+  /* link not yet wired — plain text, no dead tab */
+  .pending{color:var(--stone);border-bottom:1px dotted var(--stone-light);text-decoration:none;cursor:default;}
+
+  /* sub-group label */
+  .sub{font-family:'DM Sans',sans-serif;font-size:.92rem;letter-spacing:.18em;text-transform:uppercase;
+    font-weight:600;color:var(--copper-dark);margin:2.8rem 0 .2rem;display:flex;align-items:center;gap:.8rem;}
+  .sub::after{content:"";flex:1;height:2px;background:linear-gradient(90deg,rgba(154,93,39,.5),transparent);}
+
+  /* ordered steps — counter numerals, no boxes */
+  ol.steps{list-style:none;counter-reset:s;margin:1.3rem 0 0;padding:0;}
+  ol.steps > li{counter-increment:s;position:relative;padding:0 0 1.55rem 3.3rem;}
+  ol.steps > li::before{content:counter(s);position:absolute;left:0;top:-.25rem;
+    font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:700;color:var(--copper-dark);line-height:1;}
+  ol.steps li strong{font-weight:600;color:var(--forest);}
+  ol.steps.big > li{padding-bottom:1.9rem;}
+  ol.steps.big > li::before{font-size:3rem;color:var(--sage);}
+  ul.bullets{list-style:none;margin:.7rem 0 0;padding:0;}
+  ul.bullets li{position:relative;padding:.28rem 0 .28rem 1.5rem;}
+  ul.bullets li::before{content:"";position:absolute;left:0;top:.92rem;width:7px;height:7px;
+    background:var(--copper);border-radius:50%;}
+
+  /* bookmark callout */
+  .bookmark{margin-top:1.4rem;padding-left:1.2rem;border-left:3px solid var(--copper-light);}
+  .bookmark .tag{font-weight:700;color:var(--copper-dark);text-transform:uppercase;letter-spacing:.1em;font-size:.95rem;}
+  .linklist{margin-top:.7rem;line-height:2.1;}
+  .stack{display:block;margin-top:.55rem;}
+  .stack a{display:block;padding:.18rem 0;font-weight:600;}
+  .alsores{display:block;margin-top:.7rem;font-size:1.02rem;color:var(--stone);line-height:1.9;}
+  ul.bullets{list-style:none;margin:.8rem 0 .2rem;padding:0;}
+  ol.steps li ul.bullets li{counter-increment:none;position:relative;padding:.24rem 0 .24rem 1.5rem;}
+  ol.steps li ul.bullets li::before{content:"";position:absolute;left:0;top:.78rem;width:7px;height:7px;
+    background:var(--copper);border-radius:50%;}
+
+  /* starter links */
+  .starter-list{list-style:none;margin:1.6rem 0 0;padding:0;}
+  .starter-list li{padding:0 0 1.5rem 0;}
+  .starter-list .name{font-family:'Cormorant Garamond',serif;font-size:1.85rem;font-weight:700;}
+  .starter-list .desc{color:var(--stone);display:block;margin-top:.2rem;font-size:1.1rem;line-height:1.5;}
+
+  /* copy block — the one intentional box */
+  .copybox{background:#fff;border:2px solid rgba(154,93,39,.4);border-radius:16px;
+    padding:1.6rem 1.6rem 1.4rem;margin-top:1.5rem;box-shadow:0 8px 26px rgba(26,22,18,.07);}
+  .copytext{font-family:'DM Sans',sans-serif;font-size:1.1rem;color:var(--ink);line-height:1.65;border:0;font-weight:400;}
+  .copytext p{margin:0 0 1rem;}
+  .copytext p:last-child{margin-bottom:0;}
+  .copytext .ct-head{font-weight:600;letter-spacing:.02em;color:var(--forest);text-transform:uppercase;}
+  .copytext a{font-weight:500;word-break:break-word;}
+  .copybtn{font-family:'DM Sans',sans-serif;font-weight:600;font-size:1.05rem;letter-spacing:.02em;
+    background:var(--copper-dark);color:#fff;border:none;border-radius:999px;padding:.75rem 1.8rem;cursor:pointer;
+    margin-top:1.2rem;transition:background .18s;}
+  .copybtn:hover,.copybtn:focus-visible{background:#7e4a1f;}
+  .copybtn:focus-visible{outline:2px solid var(--forest);outline-offset:2px;}
+  .copyhint{font-size:.98rem;color:var(--stone);margin-top:.8rem;}
+
+  footer{background:var(--band-mist);text-align:center;padding:2.6rem 1.4rem 3rem;color:var(--stone);font-size:1.05rem;}
+  footer .serif{font-size:1.5rem;color:var(--forest);font-weight:500;display:block;margin-bottom:.4rem;}
+  footer a{color:var(--copper-dark);}
+
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<!-- ===== Intro ===== -->
+<section class="band sand">
+  <div class="col center">
+    <p class="eyebrow">Independent BEMER Distributor &middot; IBD</p>
+    <h1>Welcome to <em>BEMER</em></h1>
+    <p class="lead">Your do-now setup - the four moves that build the business, and the two links that start it all — in order, in one place. <br>Earn while you learn.</p>
+    <div class="rule"></div>
+  </div>
+</section>
+
+<!-- ===== Welcome message ===== -->
+<section class="band parchment">
+  <div class="col">
+    <h2>Welcome to the <em>Brighten Your World</em> BEMER Team</h2>
+    <p class="lead">I'm so glad you're here.</p>
+    <p>Think of it as two hands working together.</p>
+    <p><strong>BEMER corporate</strong> handles the business side — payments, your webshop, and enrollment.</p>
+    <p><strong>Brighten Your World (BYW)</strong> handles the why — what BEMER does in the body — plus a system that makes sharing and growing your team easier, carrying your people from first curiosity to the full clinical value of their own BEMER.</p>
+    <p>Built over ten years, as a team, with purpose.</p>
+    <p>When you register, you become part of the conversation — we'll gently keep you current with trainings, product updates, and promotions, so you're always supported and never left guessing.</p>
+    <p><strong>One heartfelt ask:</strong> Please share these resources only with our team, so our circle stays close enough to answer every question you and your guests bring.</p>
+  </div>
+</section>
+
+<!-- ===== Setup list ===== -->
+<section class="band cream">
+  <div class="col">
+    <p class="eyebrow">Do this once</p>
+    <h2>Your setup list</h2>
+    <p class="lead">Knock these out one time and you're fully operational — ready to put bodies on BEMER and invite your first guests.</p>
+
+    <div class="sub">Brighten Your World upline team</div>
+    <ol class="steps">
+      <li><strong>Sign up as a Distributor</strong> on the <a href="https://team.brightenyourworld.club/home" target="_blank" rel="noopener noreferrer">Brighten Your World (BYW) Team Landing Page</a>. This online library will give you access to resources developed specifically for you and your clients, including operational information, medical and scientific content, user results, and IBD education, as well as ongoing communications about all things BEMER.</li>
+      <li><strong>Once you have registered… set a password to gain access.  Details here:</strong> <a href="https://docs.google.com/document/d/1m-T7i7uKBnhL8sTG0alMM81vMPBuyb8oPJn_wwPr8Gc/edit?tab=t.0#heading=h.84ro9juhug23" target="_blank" rel="noopener noreferrer">Getting into Discover BEMER Sites/Library</a>.</li>
+      <li><strong>Join the private Facebook group.</strong> Connect with the team in the <a href="https://www.facebook.com/groups/413644172401397/" target="_blank" rel="noopener noreferrer">private BYW Facebook group</a>.<!-- TODO: Facebook group URL --></li>
+      <li><strong>Health care providers — join the Regenerative Network.</strong> For in-depth, asynchronous clinical conversations. <a href="https://info.brightenyourbeing.com/widget/form/PEDy0BpfGlhFNiu8aNBn" target="_blank" rel="noopener noreferrer">Regenerative Network</a>.</li>
+      <li><strong>Calendar the Team Support Calls.</strong> Tuesday nights plus — a great place to invite guests for education, results stories, and an expert panel. Plus, on the second Tuesday of the month, it's all about you, the BEMER business partner. <a href="https://supporttosharebywbemerteam.netlify.app/" target="_blank" rel="noopener noreferrer">See the call schedule</a>.</li>
+      <li><strong>Pick your lane.</strong> Accelerate your BEMER business — <strong>Gold</strong> is recommended if you have a practice and want client support branded as yours, plus a support bot that answers everything BEMER. <strong>Bronze</strong> is free for your first six months of being an IBD - so don't waste any time — start now! <a href="https://acceleratoroffer.netlify.app/" target="_blank" rel="noopener noreferrer">Accelerate your BEMER business</a>.<!-- TODO: Business Accelerator URL --></li>
+    </ol>
+
+    <div class="sub">Brighten Your World — resources</div>
+    <ol class="steps" style="counter-reset:s 6;">
+      <li><strong>Bookmark your key sites in a BEMER folder on your favorites bar.</strong> Go here for videos on how to set up <a href="https://drive.google.com/drive/folders/1VlNuQ3lUQTQgy9LeXK9zD3e4ge-YUi_J" target="_blank" rel="noopener noreferrer">technology &amp; bookmark</a>.
+        <ul class="bullets">
+          <li><a href="https://discover.brightenyourworld.club" target="_blank" rel="noopener noreferrer">Distributor Education Site</a></li>
+          <li><a href="https://docs.google.com/document/d/1XLmms8uWETHit8D0ugcnW3F5ofOwt32KGCWXxHi6iLk/edit" target="_blank" rel="noopener noreferrer">Clinical Implementation Guide for Clinicians</a></li>
+          <li><a href="https://docs.google.com/document/d/11oaA8SvUnrH180Pz29CV3evyWxpXNgqyjnExFMsK2K0/edit?tab=t.0" target="_blank" rel="noopener noreferrer">The Onboarding Sourcebook</a></li>
+          <li><a href="https://team.brightenyourworld.club/scienceandsolutions" target="_blank" rel="noopener noreferrer">Guests Invited</a></li>
+          <li><a href="https://supporttosharebywbemerteam.netlify.app/" target="_blank" rel="noopener noreferrer">Team Support &amp; Trainings</a></li>
+          <li><a href="https://drive.google.com/file/d/1sD0m2uWubil6dDy6eUStWD9mSgehn4tH/view" target="_blank" rel="noopener noreferrer">Print: how to run an effective BEMER demo</a></li>
+          <li><a href="">Green Video</a></li>
+          <li><a href="https://backoffice.bemer.services/en_US/login">BEMER Back Office (BBO)</a></li>
+        </ul>
+      </li>
+    </ol>
+
+    <div class="sub">BEMER corporate support</div>
+    <ol class="steps" start="8" style="counter-reset:s 7;">
+      <li><strong>Understand your Back Office.</strong> The most important function is payouts — how you get paid — and you can track finances, delivery, and warranty. Here are written instructions: <a href="https://drive.google.com/file/d/1c5Oz81VgBU5K8t9OMLE6CyGpx2rm69kC/view" target="_blank" rel="noopener noreferrer">Understanding Your Back Office</a>. If you prefer, there is a video instruction in your Distributor library under BEMER Academy Registration.</li>
+      <li><strong>Log in &amp; personalize.</strong> Log in to your <a href="https://backoffice.bemer.services/en_US/dashboard" target="_blank" rel="noopener noreferrer">BEMER Back Office</a>, then add your photo.</li>
+      <li><strong>Register for BEMER Academy.</strong> Our system turns this required training into an easy process — Our goal is to support you in reaching Senior so that you get a 50% pay raise and change people's lives. <a href="https://bemer-usa.onepage.me/bemerevents" target="_blank" rel="noopener noreferrer">Register for BEMER Academy</a>. You must scroll down to see the next in-person and online Academies being offered. NOTE: Your first Academy is free. To register, you will need your email address and the password you used to register for your distributorship.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== Four moves ===== -->
+<section class="band sage">
+  <div class="col">
+    <p class="eyebrow">Now start sharing BEMER</p>
+    <h2>The whole system in <em>four moves</em></h2>
+    <p class="lead">If you do nothing else, do these four. They're what drives success — and you can start today.</p>
+    <ol class="steps big">
+      <li><strong>Beings on BEMER.</strong> Get people experiencing it. Have them sign the release on the <a href="https://team.brightenyourworld.club/home" target="_blank" rel="noopener noreferrer">Team Landing Page</a>, which enrolls them into the automated follow-up education that follows up for you.</li>
+      <li><strong>Invite guests.</strong> The highest-leverage thing you can do. Bring them to live education and let the medical panel and presenters do the validating. We will send you a text to share every Sunday- just copy and send. Doing this one thing every week changes your business. Here is the link to invite: <a href="https://team.brightenyourworld.club/scienceandsolutions" target="_blank" rel="noopener noreferrer">Invite Guests — Live Education with Q&amp;A</a>.<br>Have a client with a specific concern? Text LoriGrace at <a href="tel:+19703528873">970-352-8873</a>, and she can often match it to a results story during the Q&amp;A after the BEMER presentation.</li>
+      <li><strong>Recommend &amp; let the system close.</strong> Make the recommendation; the automated education, follow-up, and — with Gold — your AI assistant carry it the rest of the way. <a href="https://acceleratoroffer.netlify.app/" target="_blank" rel="noopener noreferrer">See how the automated sharing system works</a>.<!-- TODO --></li>
+      <li><strong>Purchase, support &amp; register.</strong> Sign customers and distributors up for the Brighten Your World usage email system, check in on progress, and keep a tracking sheet for each client. <a href="https://docs.google.com/document/d/15BqG1tITmTAYo_DXd9n9nxwmZ9l_yn4hFBHvOnkzBlY/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Purchase process</a>.<!-- TODO --></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== Closing message (pink) ===== -->
+<section class="band rose">
+  <div class="col">
+    <h2 class="big-head center">Two Links. One Simple System. <em>Your Whole Business Starts Here.</em></h2>
+    <p class="lead center" style="font-weight:600;color:var(--forest);">These 2 links run the process — just share them.</p>
+    <p style="margin-top:1.7rem;"><strong>Remember:</strong> you can run your whole BEMER business with these two links. Share them first — they start the process, educate and inspire your prospects, and move people into the system.</p>
+    <p>And remember the magnitude of what you are sharing: this is not just about selling a device. It is about helping people care for their body, brain, and being — and extending that care to the people they love, their families, and even their animals.</p>
+    <p>For clinicians and healthcare advocates, this is the <em>why</em>. You are giving people a simple way to understand an opportunity that can support daily health, recovery, resilience, and quality of life at home.</p>
+  </div>
+</section>
+
+<!-- ===== Copy the two links (brown) ===== -->
+<section class="band brown">
+  <div class="col">
+    <h2 class="brown-title">Two links. One system. <em>A bigger mission</em> — helping more bodies, brains, and beings, families and animals included, <em>receive better care.</em></h2>
+    <p class="brown-sub">Copy &amp; paste your two links</p>
+    <div class="copybox">
+      <div class="copytext" id="startText"><p class="ct-head">BEMER-BRIGHTEN YOUR WORLD TEAM— START HERE</p>
+<p><strong>Team Landing Page</strong><br>
+<a href="https://team.brightenyourworld.club/home">https://team.brightenyourworld.club/home</a><br>
+Release form, demos, and email education sign-ups (human, equine, customer, rental, IBD).</p>
+<p><strong>Invite Guests — Live Education with Q&amp;A</strong><br>
+<a href="https://team.brightenyourworld.club/scienceandsolutions">https://team.brightenyourworld.club/scienceandsolutions</a><br>
+The link you share to invite guests to every presentation.</p>
+<p>Questions or results stories during presentations— text LoriGrace at <a href="tel:+19703528873">970-352-8873</a></p></div>
+      <button class="copybtn" id="copyBtn" type="button">Copy to clipboard</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="serif">Brighten Your World</span>
+  LoriGrace Kochevar, MS, LPC &middot; text LoriGrace at <a href="tel:+19703528873">970-352-8873</a><br>
+  Independent BEMER Distributor start-here page.
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById('copyBtn');
+    var src = document.getElementById('startText');
+    btn.addEventListener('click', function(){
+      var html = src.innerHTML;
+      var text = src.innerText;
+      var done = function(){ btn.textContent = 'Copied \u2713 links stay live'; setTimeout(function(){ btn.textContent='Copy to clipboard'; }, 2600); };
+      function select(){
+        var r = document.createRange(); r.selectNodeContents(src);
+        var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
+        try { document.execCommand('copy'); done(); } catch(e){ btn.textContent='Select the text and copy'; }
+      }
+      function plainFallback(){
+        if (navigator.clipboard && navigator.clipboard.writeText){
+          navigator.clipboard.writeText(text).then(done).catch(select);
+        } else { select(); }
+      }
+      if (navigator.clipboard && window.ClipboardItem){
+        try{
+          var item = new ClipboardItem({
+            'text/html': new Blob([html], {type:'text/html'}),
+            'text/plain': new Blob([text], {type:'text/plain'})
+          });
+          navigator.clipboard.write([item]).then(done).catch(plainFallback);
+        }catch(e){ plainFallback(); }
+      } else { plainFallback(); }
+    });
+  })();
+</script>
+</body>
+</html>
